@@ -214,12 +214,9 @@
                 }, 800);
             };
 function showResults() {
-
     page(5);
-
     const budget = a.b || "";
     let h = '';
-
     h += `
         <h2>🎄 Resultaten</h2>
         <p>
@@ -228,28 +225,21 @@ function showResults() {
             hebben de kerstelfen deze suggesties geselecteerd.
         </p>
     `;
-
     // =========================
     // INSPIRATIE
     // =========================
-
     if ((a.m || '').includes('inspiratie')) {
-
         h += `
             <div class="insp">
                 <h2>✨ Inspiratiecadeaus</h2>
-
                 <h3>📚 Engelstalige fantasy boeken</h3>
-
-                <p>
+               <p>
                     Prijs: €10-25<br>
                     Verkrijgbaar bij: boekwinkels, bol, amazon
                 </p>
-
                 <p>
                     Suggesties:
                 </p>
-
                 <ul>
                     <li>Hunger Games Collectors Edition</li>
                     <li>Six Scorched Roses</li>
@@ -257,21 +247,17 @@ function showResults() {
                     <li>Spells for Forgetting</li>
                     <li>The Fifth Season</li>
                 </ul>
-
                 <p>
                     🎄 Waarom de kerstelfen dit cadeau hebben gekozen:
                     Omdat verdwalen in een goed verhaal soms het mooiste cadeau is.
                 </p>
             </div>
-
             <div class="insp">
                 <h3>💎 Diamond Painting</h3>
-
                 <p>
                     Prijs: Zelf te bepalen<br>
                     Verkrijgbaar bij: Bol, Amazon, online winkels
                 </p>
-
                 <p>
                     🎄 Waarom de kerstelfen dit cadeau hebben gekozen:
                     Voor avonden waarop ontspanning belangrijker is dan productiviteit.
@@ -279,34 +265,27 @@ function showResults() {
             </div>
             <div class="insp">
                 <h3>🧱 Lego </h3>
-
                 <p>
                     Prijs: volledig zelf te bepalen<br>
                     Verkrijgbaar bij: LEGO, Bol
                 </p>
             </div>
-
             <div class="insp">
                 <h3>🧩 Puzzels</h3>
-
                 <p>
                     Prijs: volledig zelf te bepalen<br>
                     Verkrijgbaar bij: vrijwel overal
                 </p>
             </div>
-
             <div class="insp">
                 <h3>🎄 Vondels</h3>
-
                 <p>
                     Prijs: €15-25
                     Verkrijgbaar bij: Bijenkorf, Vondels
                 </p>
             </div>
-
             <div class="insp">
                 <h3>🎨 Kleurboeken</h3>
-
                 <p>
                     Bijvoorbeeld van Jade Summer of Coco Wyo.
                     Prijs: €15-20
@@ -314,28 +293,20 @@ function showResults() {
                 </p>
             </div>
         `;
-
     }
-
     // =========================
     // CONCRETE CADEAUS
     // =========================
-
     else {
-
         h += `<h2>🎯 Concrete cadeaus</h2>`;
-
         const concreteCadeaus = [];
-
         // €10-25 en hoger
-
         if (
             budget.includes('€10-25') ||
             budget.includes('€25-50') ||
             budget.includes('€50-100') ||
             budget.includes('prijskaartje')
         ) {
-
             concreteCadeaus.push(
                 {
                     naam: 'Cozy Romantasy kleurboek van Jade Summer',
@@ -374,13 +345,10 @@ function showResults() {
                 }
             );
         }
-
         // €25-50 en hoger
-
         if (
             budget.includes('€25-50')
         ) {
-
             concreteCadeaus.push(
                 {
                     naam: 'Ohuhu Honolulu 48 Mid Tone Colors Brush & Fine Tip',
@@ -391,14 +359,11 @@ function showResults() {
                 }
             );
         }
-
         // €50-100 en hoger
-
         if (
             budget.includes('€50-100') ||
             budget.includes('prijskaartje')
         ) {
-
             concreteCadeaus.push(
                 {
                     naam: 'Ohuhu Honolulu Stiften Brush & Fine Tip',
@@ -410,13 +375,10 @@ function showResults() {
                 }
             );
         }
-
         // onbeperkt budget
-
         if (
             budget.includes('prijskaartje')
         ) {
-
             concreteCadeaus.push(
                 {
                     naam: 'LEGO Boekensteun Boekhandel',
@@ -427,30 +389,23 @@ function showResults() {
                 }
             );
         }
-
         concreteCadeaus.forEach(c => {
-
             h += `
                 <div class="gift">
-
                     <h3>${c.naam}</h3>
-
                     <p>
                         <strong>Prijs:</strong> ${c.prijs}
                     </p>
-
                     <p>
                         <strong>Verkrijgbaar bij:</strong>
                         ${c.winkel}
                     </p>
-
                     ${c.extra ? `
                         <p>
                             <strong>Extra:</strong>
                             ${c.extra}
                         </p>
                     ` : ''}
-
                     <p>
                         🎄
                         <strong>
@@ -459,85 +414,65 @@ function showResults() {
                         <br>
                         ${c.reden}
                     </p>
-
                 </div>
             `;
-
         });
-
     }
-
     // =========================
     // CADEAUPAKKETTEN
     // =========================
-
     const showPacks =
         budget.includes('€50-100') ||
         budget.includes('prijskaartje');
-
     if (showPacks) {
-
         h += `
             <h2>🎁 Cadeaupakketten</h2>
-
             <div class="pack">
                 <h3>🎁 Hobby verzamelaar</h3>
-
                 <ul>
                     <li>Kleurboek</li>
                     <li>Diamond Painting</li>
                     <li>Engelstalig fantasyboek</li>
                 </ul>
-
                 <p>
                     🎄 Waarom de kerstelfen dit pakket hebben samengesteld:
                     Voor iemand die hobby's verzamelt alsof het Pokémon zijn.
                 </p>
             </div>
-
             <div class="pack">
                 <h3>🎁 Cozy kleuren</h3>
-
                 <ul>
                     <li>Ohuhu stiften</li>
                     <li>Kleurboek</li>
                 </ul>
-
                 <p>
                     Extra:
                     PURPOSECOLORING10
                 </p>
-
                 <p>
                     🎄 Waarom de kerstelfen dit pakket hebben samengesteld:
                     Voor lange winteravonden vol creativiteit.
                 </p>
             </div>
-
             <div class="pack">
                 <h3>🎁 Variatieset</h3>
-
                 <ul>
                     <li>Ovenwant</li>
                     <li>Turtle Beach Headset</li>
                     <li>Kleurboek</li>
                 </ul>
-
                 <p>
                     🎄 Waarom de kerstelfen dit pakket hebben samengesteld:
                     Omdat kiezen soms gewoon veel te moeilijk is.
                 </p>
             </div>
-
             <div class="pack">
                 <h3>🎁 Puzzelmoment</h3>
-
                 <ul>
                     <li>Puzzel</li>
                     <li>LEGO</li>
                     <li>Murdoku</li>
                 </ul>
-
                 <p>
                     🎄 Waarom de kerstelfen dit pakket hebben samengesteld:
                     Voor urenlang ontspannen puzzelplezier.
@@ -545,7 +480,6 @@ function showResults() {
             </div>
         `;
     }
-
     document.getElementById('out').innerHTML = h;
 }
             document.getElementById("restart").onclick = () => location.reload();
