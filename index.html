@@ -132,8 +132,7 @@
             <section id="s2" class="hidden">
                 <h2>Wat is je budget?</h2>
                 <div id="bud">
-                    <button class="choice">Tot €10</button><button class="choice">€10-25</button
-                    ><button class="choice">€25-50</button><button class="choice">€50-100</button
+                    <button class="choice">€10-25</button><button class="choice">€25-50</button><button class="choice">€50-100</button
                     ><button class="choice">Mijn liefde voor Jolijn kent geen prijskaartje</button>
                 </div>
                 <button class="btn" id="n2">Verder</button>
@@ -278,23 +277,8 @@ function showResults() {
                     Voor avonden waarop ontspanning belangrijker is dan productiviteit.
                 </p>
             </div>
-
             <div class="insp">
-                <h3>🎧 Turtle Beach Headset</h3>
-
-                <p>
-                    Prijs: €30-100<br>
-                    Verkrijgbaar bij: Bol, Turtle Beach
-                </p>
-
-                <p>
-                    Voorkeur kleuren:
-                    paars, roze of wit
-                </p>
-            </div>
-
-            <div class="insp">
-                <h3>🧱 LEGO van eigen inspiratie</h3>
+                <h3>🧱 Lego </h3>
 
                 <p>
                     Prijs: volledig zelf te bepalen<br>
@@ -312,10 +296,21 @@ function showResults() {
             </div>
 
             <div class="insp">
+                <h3>🎄 Vondels</h3>
+
+                <p>
+                    Prijs: €15-25
+                    Verkrijgbaar bij: Bijenkorf, Vondels
+                </p>
+            </div>
+
+            <div class="insp">
                 <h3>🎨 Kleurboeken</h3>
 
                 <p>
-                    Voorkeur voor Jade Summer boeken.
+                    Bijvoorbeeld van Jade Summer of Coco Wyo.
+                    Prijs: €15-20
+                    Verkrijgbaar bij: Boekwinkels, Pipoos
                 </p>
             </div>
         `;
@@ -346,7 +341,7 @@ function showResults() {
                     naam: 'Cozy Romantasy kleurboek van Jade Summer',
                     prijs: '€16',
                     winkel: 'Bol, Pipoos, Bruna',
-                    extra: '',
+                    extra: 'Of een ander Jade summer kleurboek(cozy kingdom heb ik al)',
                     reden: 'Fantasy, dekentjes en kleurpotloden zijn een bewezen wintercombinatie.'
                 },
                 {
@@ -384,14 +379,31 @@ function showResults() {
 
         if (
             budget.includes('€25-50') ||
-            budget.includes('€50-100') ||
-            budget.includes('prijskaartje')
         ) {
 
             concreteCadeaus.push(
                 {
                     naam: 'Ohuhu Honolulu 48 Mid Tone Colors Brush & Fine Tip',
                     prijs: '€48',
+                    winkel: 'Amazon, Ohuhu',
+                    extra: 'Kortingscode PURPOSECOLORING10',
+                    reden: 'Omdat Jolijn nog nooit heeft gezegd: "Ik heb eigenlijk te veel stiften."'
+                }
+            );
+        }
+
+        // €50-100 en hoger
+
+        if (
+            budget.includes('€50-100') ||
+            budget.includes('prijskaartje')
+        ) {
+
+            concreteCadeaus.push(
+                {
+                    naam: 'Ohuhu Honolulu Stiften Brush & Fine Tip',
+                    opties: '48 Mid Tone Colors set of 104 Colors set"
+                    prijs: '€48 of €78', 
                     winkel: 'Amazon, Ohuhu',
                     extra: 'Kortingscode PURPOSECOLORING10',
                     reden: 'Omdat Jolijn nog nooit heeft gezegd: "Ik heb eigenlijk te veel stiften."'
@@ -408,7 +420,7 @@ function showResults() {
             concreteCadeaus.push(
                 {
                     naam: 'LEGO Boekensteun Boekhandel',
-                    prijs: '€100+',
+                    prijs: '€100-130',
                     winkel: 'LEGO, Bol',
                     extra: 'Check Brickwatch voor de beste prijs.',
                     reden: 'Omdat boeken nóg gezelliger worden als er LEGO tussen staat.'
