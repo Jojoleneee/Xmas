@@ -225,9 +225,6 @@ function showResults() {
             hebben de kerstelfen deze suggesties geselecteerd.
         </p>
     `;
-    // =========================
-    // INSPIRATIE
-    // =========================
     if ((a.m || '').includes('inspiratie')) {
         h += `
             <div class="insp">
@@ -294,9 +291,6 @@ function showResults() {
             </div>
         `;
     }
-    // =========================
-    // CONCRETE CADEAUS
-    // =========================
     else {
         h += `<h2>🎯 Concrete cadeaus</h2>`;
         const concreteCadeaus = [];
@@ -345,7 +339,6 @@ function showResults() {
                 }
             );
         }
-        // €25-50 en hoger
         if (
             budget.includes('€25-50')
         ) {
@@ -359,7 +352,6 @@ function showResults() {
                 }
             );
         }
-        // €50-100 en hoger
         if (
             budget.includes('€50-100') ||
             budget.includes('prijskaartje')
@@ -375,7 +367,6 @@ function showResults() {
                 }
             );
         }
-        // onbeperkt budget
         if (
             budget.includes('prijskaartje')
         ) {
@@ -418,9 +409,6 @@ function showResults() {
             `;
         });
     }
-    // =========================
-    // CADEAUPAKKETTEN
-    // =========================
     const showPacks =
         budget.includes('€50-100') ||
         budget.includes('prijskaartje');
