@@ -214,115 +214,328 @@
                     }
                 }, 800);
             };
-            function showResults() {
-                page(5);
-                let h = "";
-                if ((a.m || "").includes("inspiratie")) {
-                    h +=
-                        '<div class="insp"><h2>✨ Inspiratiecadeaus</h2><h3>Engelstalige fantasy boeken</h3><p>€10-25 | boekwinkels, bol, amazon</p><p>Suggesties: Hunger Games Collectors Edition, Six Scorched Roses, Remarkably Bright Creatures, Spells for Forgetting, The Fifth Season</p><p>🎄 Waarom de kerstelfen dit cadeau hebben gekozen: Omdat verdwalen in een goed verhaal soms het mooiste cadeau is.</p></div>';
-                    h +=
-                        '<div class="insp"><h3>Diamond Painting</h3><p>Prijs zelf te bepalen | bol, amazon, online winkels</p></div><div class="insp"><h3>Lego</h3><p>€10-∞</p></div><div class="insp"><h3>Puzzels</h3><p>€15-€100</div><div class="insp"><h3>Kleurboeken</h3><p>€10-€20 | Bijvoorbeeld van Jade Summer, Coco Wyo, Johanna Basford</p></div>';
-                } else {
-                    const budget = a.b || "";
+function showResults() {
 
-const cards = [];
+    page(5);
 
-if (
-    budget.includes("€10-25") ||
-    budget.includes("€25-50") ||
-    budget.includes("€50-100") ||
-    budget.includes("prijskaartje")
-){
-    cards.push(
-        [
-            'Cozy Romantasy kleurboek',
-            '€16',
-            'Bol, Pipoos, Bruna',
-            'Een ander Jade Summer boek mag ook',
-            'Fantasy, dekentjes en kleurpotloden zijn een bewezen wintercombinatie.'
-        ]
-    );
+    const budget = a.b || "";
+    let h = '';
 
-    cards.push(
-        [
-            'Johanna Basford kleurboek',
-            '€15-20',
-            'Bol, Amazon, boekwinkel',
-            'Voorkeur Inklings of Small Victories',
-            'Creatieve ontspanning raakt nooit uit de mode.'
-        ]
-    );
+    h += `
+        <h2>🎄 Resultaten</h2>
+        <p>
+            Op basis van het gekozen budget:
+            <strong>${budget}</strong>
+            hebben de kerstelfen deze suggesties geselecteerd.
+        </p>
+    `;
 
-    cards.push(
-        [
-            'Ulster Weaver ovenwant',
-            '€10-20',
-            'Kookwinkels, Bol',
-            'Butterfly Grove of Pasta Lovers Club',
-            'Praktisch én leuk.'
-        ]
-    );
+    // =========================
+    // INSPIRATIE
+    // =========================
 
-    cards.push(
-        [
-            'Murdoku puzzelboek',
-            '€15-20',
-            'Boekwinkels, Bol',
-            'Murdoku of Alice is niet de moordenaar',
-            'Nog één puzzeltje...'
-        ]
-    );
+    if ((a.m || '').includes('inspiratie')) {
 
-    cards.push(
-        [
-            'Lego gezellige plantjes',
-            '€20',
-            'Lego, Bol',
-            'Check Brickwatch',
-            'Gezelligheid zonder water geven.'
-        ]
-    );
-}
-                    if (
-    budget.includes("€25-50") ||
-    budget.includes("€50-100") ||
-    budget.includes("prijskaartje")
-){
-    cards.push(
-        [
-            'Ohuhu Honolulu 48 Mid Tone Colors',
-            '€48',
-            'Amazon, Ohuhu',
-            'kortingscode PurposeColoring10',
-            'Omdat Jolijn nog nooit heeft gezegd: Ik heb eigenlijk te veel stiften.'
-        ]
-    );
-}
-                    if (
-    budget.includes("prijskaartje")
-){
-    cards.push(
-        [
-            'Lego boekensteun boekhandel',
-            '€100+',
-            'Lego, Bol',
-            'Check Brickwatch',
-            'Boeken worden nóg gezelliger met LEGO.'
-        ]
-    );
-}
-                    h += "<h2>🎯 Concrete cadeaus</h2>";
-                    cards.forEach(
-                        (c) =>
-                            (h += `<div class="gift"><h3>${c[0]}</h3><p>Prijs: ${c[1]}<br>Verkrijgbaar bij: ${c[2]}</p><p>${c[3]}</p><p>🎄 Waarom de kerstelfen dit cadeau hebben gekozen: ${c[4]}</p></div>`)
-                    );
+        h += `
+            <div class="insp">
+                <h2>✨ Inspiratiecadeaus</h2>
+
+                <h3>📚 Engelstalige fantasy boeken</h3>
+
+                <p>
+                    Prijs: €10-25<br>
+                    Verkrijgbaar bij: boekwinkels, bol, amazon
+                </p>
+
+                <p>
+                    Suggesties:
+                </p>
+
+                <ul>
+                    <li>Hunger Games Collectors Edition</li>
+                    <li>Six Scorched Roses</li>
+                    <li>Remarkably Bright Creatures</li>
+                    <li>Spells for Forgetting</li>
+                    <li>The Fifth Season</li>
+                </ul>
+
+                <p>
+                    🎄 Waarom de kerstelfen dit cadeau hebben gekozen:
+                    Omdat verdwalen in een goed verhaal soms het mooiste cadeau is.
+                </p>
+            </div>
+
+            <div class="insp">
+                <h3>💎 Diamond Painting</h3>
+
+                <p>
+                    Prijs: Zelf te bepalen<br>
+                    Verkrijgbaar bij: Bol, Amazon, online winkels
+                </p>
+
+                <p>
+                    🎄 Waarom de kerstelfen dit cadeau hebben gekozen:
+                    Voor avonden waarop ontspanning belangrijker is dan productiviteit.
+                </p>
+            </div>
+
+            <div class="insp">
+                <h3>🎧 Turtle Beach Headset</h3>
+
+                <p>
+                    Prijs: €30-100<br>
+                    Verkrijgbaar bij: Bol, Turtle Beach
+                </p>
+
+                <p>
+                    Voorkeur kleuren:
+                    paars, roze of wit
+                </p>
+            </div>
+
+            <div class="insp">
+                <h3>🧱 LEGO van eigen inspiratie</h3>
+
+                <p>
+                    Prijs: volledig zelf te bepalen<br>
+                    Verkrijgbaar bij: LEGO, Bol
+                </p>
+            </div>
+
+            <div class="insp">
+                <h3>🧩 Puzzels</h3>
+
+                <p>
+                    Prijs: volledig zelf te bepalen<br>
+                    Verkrijgbaar bij: vrijwel overal
+                </p>
+            </div>
+
+            <div class="insp">
+                <h3>🎨 Kleurboeken</h3>
+
+                <p>
+                    Voorkeur voor Jade Summer boeken.
+                </p>
+            </div>
+        `;
+
+    }
+
+    // =========================
+    // CONCRETE CADEAUS
+    // =========================
+
+    else {
+
+        h += `<h2>🎯 Concrete cadeaus</h2>`;
+
+        const concreteCadeaus = [];
+
+        // €10-25 en hoger
+
+        if (
+            budget.includes('€10-25') ||
+            budget.includes('€25-50') ||
+            budget.includes('€50-100') ||
+            budget.includes('prijskaartje')
+        ) {
+
+            concreteCadeaus.push(
+                {
+                    naam: 'Cozy Romantasy kleurboek van Jade Summer',
+                    prijs: '€16',
+                    winkel: 'Bol, Pipoos, Bruna',
+                    extra: '',
+                    reden: 'Fantasy, dekentjes en kleurpotloden zijn een bewezen wintercombinatie.'
+                },
+                {
+                    naam: 'Johanna Basford kleurboek',
+                    prijs: '€15-20',
+                    winkel: 'Bol, Amazon, boekwinkel',
+                    extra: 'Voorkeur voor Inklings of Small Victories.',
+                    reden: 'Creatieve ontspanning raakt nooit uit de mode.'
+                },
+                {
+                    naam: 'Ulster Weavers ovenwant',
+                    prijs: '€10-20',
+                    winkel: 'Kookwinkels, Bol',
+                    extra: 'Voorkeur voor Butterfly Grove of Pasta Lovers Club.',
+                    reden: 'Praktisch én leuk.'
+                },
+                {
+                    naam: 'Murdoku puzzelboek',
+                    prijs: '€15-20',
+                    winkel: 'Boekwinkels, Bol',
+                    extra: 'Murdoku of Alice is niet de moordenaar.',
+                    reden: 'Nog één puzzeltje...'
+                },
+                {
+                    naam: 'LEGO Gezellige Plantjes',
+                    prijs: '€20',
+                    winkel: 'LEGO, Bol',
+                    extra: 'Check Brickwatch voor de beste prijs.',
+                    reden: 'Gezelligheid zonder water te geven.'
                 }
-                if ((a.b || "").includes("50-100") || (a.b || "").includes("prijskaartje")) {
-                    h +=
-                        '<h2>🎁 Cadeaupakketten</h2><div class="pack"><h3>Hobby verzamelaar</h3><ul><li>Kleurboek</h3><p>Voorkeur Jade Summer of Coco Wyo</li><li>Diamond Painting</h3><p>Prijs zelf te bepalen | bol, amazon, online winkels</li><li>Engelstalige fantasy boeken</h3><p>€10-25 | boekwinkels, bol, amazon</p><p>Suggesties: Hunger Games Collectors Edition, Six Scorched Roses, Remarkably Bright Creatures, Spells for Forgetting, The Fifth Season</li></ul></div><div class="pack"><h3>Cozy kleuren</h3><ul><li>Ohuhu Honolulu 48 Mid Tone Colors Brush and Fine tip</h3><p>€48 | Amazon, Ohuhu | kortingscode PurposeColoring10</li><li>Kleurboek</h3><p>Voorkeur Jade Summer of Coco Wyo</li></ul></div><div class="pack"><h3>Variatieset</h3><ul><li>Ulster Weaver ovenwant</h3><p>€10-20 | Kookwinkels, Bol | Butterfly Grove of Pasta Lovers Club</li><li>Turtle Beach headset</h3><p>€30-100 | voorkeur paars, roze, wit</li><li>Kleurboek</h3><p>Voorkeur Jade Summer of Coco Wyo</li></ul></div><div class="pack"><h3>Puzzelmoment</h3><ul><li>Puzzel</li><li>Lego</li><li>Murdoku</h3><p>€15-20 | Boekwinkels, Bol | Murdoku of Alice is niet de moordenaar</li></ul></div>';
+            );
+        }
+
+        // €25-50 en hoger
+
+        if (
+            budget.includes('€25-50') ||
+            budget.includes('€50-100') ||
+            budget.includes('prijskaartje')
+        ) {
+
+            concreteCadeaus.push(
+                {
+                    naam: 'Ohuhu Honolulu 48 Mid Tone Colors Brush & Fine Tip',
+                    prijs: '€48',
+                    winkel: 'Amazon, Ohuhu',
+                    extra: 'Kortingscode PURPOSECOLORING10',
+                    reden: 'Omdat Jolijn nog nooit heeft gezegd: "Ik heb eigenlijk te veel stiften."'
                 }
-                document.getElementById("out").innerHTML = h;
-            }
+            );
+        }
+
+        // onbeperkt budget
+
+        if (
+            budget.includes('prijskaartje')
+        ) {
+
+            concreteCadeaus.push(
+                {
+                    naam: 'LEGO Boekensteun Boekhandel',
+                    prijs: '€100+',
+                    winkel: 'LEGO, Bol',
+                    extra: 'Check Brickwatch voor de beste prijs.',
+                    reden: 'Omdat boeken nóg gezelliger worden als er LEGO tussen staat.'
+                }
+            );
+        }
+
+        concreteCadeaus.forEach(c => {
+
+            h += `
+                <div class="gift">
+
+                    <h3>${c.naam}</h3>
+
+                    <p>
+                        <strong>Prijs:</strong> ${c.prijs}
+                    </p>
+
+                    <p>
+                        <strong>Verkrijgbaar bij:</strong>
+                        ${c.winkel}
+                    </p>
+
+                    ${c.extra ? `
+                        <p>
+                            <strong>Extra:</strong>
+                            ${c.extra}
+                        </p>
+                    ` : ''}
+
+                    <p>
+                        🎄
+                        <strong>
+                            Waarom de kerstelfen dit cadeau hebben gekozen
+                        </strong>
+                        <br>
+                        ${c.reden}
+                    </p>
+
+                </div>
+            `;
+
+        });
+
+    }
+
+    // =========================
+    // CADEAUPAKKETTEN
+    // =========================
+
+    const showPacks =
+        budget.includes('€50-100') ||
+        budget.includes('prijskaartje');
+
+    if (showPacks) {
+
+        h += `
+            <h2>🎁 Cadeaupakketten</h2>
+
+            <div class="pack">
+                <h3>🎁 Hobby verzamelaar</h3>
+
+                <ul>
+                    <li>Kleurboek</li>
+                    <li>Diamond Painting</li>
+                    <li>Engelstalig fantasyboek</li>
+                </ul>
+
+                <p>
+                    🎄 Waarom de kerstelfen dit pakket hebben samengesteld:
+                    Voor iemand die hobby's verzamelt alsof het Pokémon zijn.
+                </p>
+            </div>
+
+            <div class="pack">
+                <h3>🎁 Cozy kleuren</h3>
+
+                <ul>
+                    <li>Ohuhu stiften</li>
+                    <li>Kleurboek</li>
+                </ul>
+
+                <p>
+                    Extra:
+                    PURPOSECOLORING10
+                </p>
+
+                <p>
+                    🎄 Waarom de kerstelfen dit pakket hebben samengesteld:
+                    Voor lange winteravonden vol creativiteit.
+                </p>
+            </div>
+
+            <div class="pack">
+                <h3>🎁 Variatieset</h3>
+
+                <ul>
+                    <li>Ovenwant</li>
+                    <li>Turtle Beach Headset</li>
+                    <li>Kleurboek</li>
+                </ul>
+
+                <p>
+                    🎄 Waarom de kerstelfen dit pakket hebben samengesteld:
+                    Omdat kiezen soms gewoon veel te moeilijk is.
+                </p>
+            </div>
+
+            <div class="pack">
+                <h3>🎁 Puzzelmoment</h3>
+
+                <ul>
+                    <li>Puzzel</li>
+                    <li>LEGO</li>
+                    <li>Murdoku</li>
+                </ul>
+
+                <p>
+                    🎄 Waarom de kerstelfen dit pakket hebben samengesteld:
+                    Voor urenlang ontspannen puzzelplezier.
+                </p>
+            </div>
+        `;
+    }
+
+    document.getElementById('out').innerHTML = h;
+}
             document.getElementById("restart").onclick = () => location.reload();
             document.getElementById("musicBtn").onclick = async () => {
                 const bg = document.getElementById("bgMusic");
