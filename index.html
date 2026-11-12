@@ -303,7 +303,16 @@ function showResults() {
                 {
                     naam: 'Cozy Romantasy kleurboek van Jade Summer',
                     prijs: '€16',
-                    winkel: 'Bol, Pipoos, Bruna',
+                    winkels: [
+                    {
+                    naam: 'Bol',
+                    url: 'https://www.bol.com/nl/nl/p/cozy-romantasy-comfy-kleurboek-jade-summer/9300000286471121/?cid=1794474075449-9866213997532'
+                    },
+                    {
+                        naam: 'Pipoos',
+                        url: 'https://www.pipoos.com/products/kleurboek-cute-cozy-cozy-romantasy?variant=58056388575615&_pos=1&_sid=6aac7ac9b&_ss=r'
+                        }
+                    ],
                     extra: 'Of een ander Jade summer kleurboek (cozy kingdom heb ik al)',
                     link: 'https://www.bol.com/nl/nl/p/cozy-romantasy-comfy-kleurboek-jade-summer/9300000286471121/?cid=1794474075449-9866213997532',
                     reden: 'Fantasy, dekentjes en kleurpotloden zijn een bewezen wintercombinatie.'
@@ -406,7 +415,15 @@ function showResults() {
                     </p>
                     <p>
                         <strong>Verkrijgbaar bij:</strong>
-                        ${c.winkel}
+                        <ul>
+                        ${c.winkels.map(w => `
+                        <li>
+                        <a href="${w.url}" target="_blank">
+                        ${w.naam}
+                        </a>
+                        </li>
+                        `).join('')}
+                        </ul>
                     </p>
                     ${c.extra ? `
                         <p>
@@ -416,7 +433,7 @@ function showResults() {
                     ` : ''}
                     <p>
                         <a href="${c.link}" target="_blank">
-                        🔗 <strong>Bekijk cadeau:</strong>
+                        🔗 <strong>Bekijk cadeau</strong>
                         </a>
                     </p>
                     <p>
